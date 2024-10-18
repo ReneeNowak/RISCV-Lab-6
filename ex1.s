@@ -24,6 +24,12 @@
 #    std::cout << "Hello, " << fib_n << "!\n";
 #  }
 
+#labs q's
+#data is used to add in global values into the program
+#word is a 32 bit comma seperated "variable"
+#.text is the code section of the program
+
+
 .data
 .word 2, 4, 6, 8
 n: .word 13
@@ -41,6 +47,7 @@ fib:    beq     t3, x0, finish # if n==0 return fib_n
         mv      t1, t2     # fib_n2 = fib_n
         addi    t3, t3, -1 # n = n - 1
         j       fib # return fib()
+
 finish: addi    a0, x0, 1
         addi    a1, t0, 0
         ecall # print integer ecall
